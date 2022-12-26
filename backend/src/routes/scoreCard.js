@@ -41,7 +41,7 @@ const findCard = async(type, string)=>{
     return queryResult; 
 }
 
-router.delete("/cards", async (req, res)=>{
+router.delete("/api/cards", async (req, res)=>{
     try {
       await ScoreCard.deleteMany({});
       console.log("Database cleared");
@@ -50,7 +50,7 @@ router.delete("/cards", async (req, res)=>{
     catch (e) { throw new Error("Database cleared failed"); }
 })
 
-router.post("/card", async function (req, res) {
+router.post("/api/card", async function (req, res) {
     try {  
       let [msg, card] = await saveCard(req.body.name, req.body.subject, req.body.score);
       res.send({message: msg, card: card}); 
@@ -59,7 +59,7 @@ router.post("/card", async function (req, res) {
     }
   });
 
-router.get("/cards",  async (req, res)=>{
+router.get("/api/cards",  async (req, res)=>{
     try {    
       let queryResult = await findCard(req.query.type, req.query.queryString)
 
