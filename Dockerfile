@@ -3,7 +3,7 @@ FROM node:16-alpine
 EXPOSE 4000
 
 WORKDIR /app
-COPY . ./app
+# COPY . .
 
 RUN corepack enable
 RUN yarn run install:prod
