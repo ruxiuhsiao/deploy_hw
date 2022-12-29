@@ -19,6 +19,7 @@ if (process.env.NODE_ENV === "development") {
 	app.use(cors());
 }
 
+// backend
 if (process.env.NODE_ENV === "production") {
      const __dirname = path.resolve();
      app.use(express.static(path.join(__dirname, "../frontend", "build")));

@@ -42,7 +42,7 @@ const findCard = async(type, string)=>{
 }
 
 router.delete("/api/cards", async (req, res)=>{
-  console.log("Delete req", req)
+  // console.log("Delete req", req)
     try {
       await ScoreCard.deleteMany({});
       console.log("Database cleared");
@@ -52,7 +52,7 @@ router.delete("/api/cards", async (req, res)=>{
 })
 
 router.post("/api/card", async function (req, res) {
-  console.log("Save req", req)
+  // console.log("Save req", req)
     try {  
       let [msg, card] = await saveCard(req.body.name, req.body.subject, req.body.score);
       res.send({message: msg, card: card}); 
@@ -62,7 +62,7 @@ router.post("/api/card", async function (req, res) {
   });
 
 router.get("/api/cards",  async (req, res)=>{
-  console.log("Query req", req)
+  // console.log("Query req", req)
     try {    
       let queryResult = await findCard(req.query.type, req.query.queryString)
 
