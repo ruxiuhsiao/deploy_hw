@@ -79,7 +79,7 @@ const Body = () => {
         queryString,
       },
     });
-    console.log(data)
+    console.log(messages)
     if (!messages) addErrorMessage(message);
     else addRegularMessage(...messages);
   };
