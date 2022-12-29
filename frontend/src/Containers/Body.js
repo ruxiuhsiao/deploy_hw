@@ -118,7 +118,7 @@ const Body = () => {
           Add
         </Button>
       </Row>
-      {/* <Row>
+      <Row>
         <StyledFormControl>
           <FormControl component="fieldset">
             <RadioGroup
@@ -154,7 +154,7 @@ const Body = () => {
         >
           Query
         </Button>
-      </Row> */}
+      </Row>
       <ContentPaper variant="outlined">
         {messages.map((m, i) => (
           <Typography variant="body2" key={m + i} style={{ color: m.color }}>
