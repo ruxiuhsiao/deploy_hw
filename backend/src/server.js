@@ -12,6 +12,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+import routes from './routes';
+app.use('/', routes);
+
 if (process.env.NODE_ENV === "development") {
 	app.use(cors());
 }
@@ -24,8 +27,7 @@ if (process.env.NODE_ENV === "production") {
      });
 }
 
-import routes from './routes';
-app.use('/', routes);
+
 console.log(">>>> routes:", routes)
 const port = process.env.PORT || 4000;
 app.listen(port, () =>
