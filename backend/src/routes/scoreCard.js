@@ -60,6 +60,7 @@ router.post("/api/card", async function (req, res) {
   });
 
 router.get("/api/cards",  async (req, res)=>{
+  console.log("Querying!")
     try {    
       let queryResult = await findCard(req.query.type, req.query.queryString)
 
