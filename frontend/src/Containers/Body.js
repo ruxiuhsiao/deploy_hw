@@ -54,6 +54,7 @@ const Body = () => {
   };
 
   const handleAdd = async () => {
+    console.log("Adding...")
     const {
       data: { message, card },
     } = await api.post('/card', {
@@ -71,6 +72,7 @@ const Body = () => {
   };
 
   const handleQuery = async () => {
+    console.log("Querying...")
     const {
       data: { messages, message },
     } = await api.get('/cards', {

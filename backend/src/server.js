@@ -26,6 +26,7 @@ if (process.env.NODE_ENV === "production") {
 
 import routes from './routes';
 app.use('/', routes);
+console.log(">>>> routes:", routes)
 const port = process.env.PORT || 4000;
 app.listen(port, () =>
      console.log(`Example app listening on port ${port}!`),
